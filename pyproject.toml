@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "welbex"
+version = "0.1.0"
+description = ""
+authors = ["dsaus <saushkin.reg@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+django = "^4.2.1"
+djangorestframework = "^3.14.0"
+psycopg2 = "^2.9.6"
+python-dotenv = "^1.0.0"
+geopy = "^2.3.0"
+django-filter = "^23.2"
+redis = "^4.5.5"
+celery = "^5.2.7"
+django-celery-beat = "^2.5.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
