@@ -1,13 +1,11 @@
 from rest_framework import viewsets
 
-from cargo.filters import CargoFilter
 from cargo.models import Cargo
 from cargo.serializers import CargoSerializer, CargoListSerializer, CargoRetrieveSerializer, CargoUpdateSerializer
 
 
 class CargoModelViewSet(viewsets.ModelViewSet):
     queryset = Cargo.objects.all()
-    filter_class = CargoFilter
     filterset_fields = ["weight"]
 
     def get_serializer_class(self):
