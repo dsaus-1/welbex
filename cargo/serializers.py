@@ -33,6 +33,15 @@ class CargoListSerializer(serializers.ModelSerializer):
         )
 
     def get_number_of_cars(self, cargo):
+        request = self.context.get('request')
+        q_string = request._request.environ.get('QUERY_STRING')
+        if q_string:
+            q_dict = dict(filter_.split('=') for filter_ in q_string.split('&'))
+
+            miles = q_dict.get('miles')
+            if miles:
+                return count_nearby_cars(cargo, int(miles))
+
         return count_nearby_cars(cargo)
 
 
